@@ -1,1 +1,10 @@
-<p>header works!</p>
+<header class="flex items-center justify-between">
+  <div class="dark:text-white text-black">Character Counter</div>
+  <button
+    type="button"
+    class="text-black dark:text-white cursor-pointer hover:text-lg duration-300"
+    (click)="toggleDarkMode()"
+  >
+    toggle theme
+  </button>
+</header>

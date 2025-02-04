@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility background {
+  background-image: radial-gradient(#272727 1px, transparent 1px),
+    radial-gradient(#272727 1px, transparent 1px);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+  background-color: #07071d;
+}
