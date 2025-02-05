@@ -9,6 +9,7 @@ import { ToggleThemeService } from '../../services/toggle-theme.service';
 })
 export class HeaderComponent {
   darkThemeService: ToggleThemeService = inject(ToggleThemeService);
+  isDarkTheme = this.darkThemeService.isDarkTheme;
   toggleDarkMode() {
     this.darkThemeService.toggleTheme();
   }
