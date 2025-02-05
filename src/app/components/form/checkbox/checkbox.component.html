@@ -1,0 +1,35 @@
+<div class="flex items-center gap-2">
+  <div class="size-5.5 border-gray-600 dark:border-gray-300 rounded-md border">
+    <input
+      title="checkbox"
+      [attr.id]="inputId"
+      type="checkbox"
+      class="hidden"
+      (change)="onchange()"
+    />
+    <div class="flex items-center justify-center dark:text-gray-200">
+      @if (state()) {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-4.5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m4.5 12.75 6 6 9-13.5"
+        />
+      </svg>
+      }
+    </div>
+  </div>
+  <label
+    [attr.for]="inputId"
+    class="flex items-center gap-2 dark:text-gray-200 cursor-pointer"
+  >
+    {{ title }}
+  </label>
+</div>
