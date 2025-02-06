@@ -11,21 +11,31 @@
     <app-card
       backgroundColor="bg-purple-400"
       title="Total Characters"
-      totalCount="00"
+      [totalCount]="totalCharacters()"
     />
     <app-card
       backgroundColor="bg-orange-400"
       title="Word Count"
-      totalCount="00"
+      [totalCount]="totalWords()"
     />
     <app-card
       backgroundColor="bg-red-400"
       title="Sentence Count"
-      totalCount="00"
+      [totalCount]="00"
     />
   </div>
   <div class="flex flex-col gap-4 mt-12 dark:text-gray-200">
     <h3 class="font-extrabold text-xl">Letter Density</h3>
+    @if (textContent().length == 0) {
     <p>No characters found. Start typing to see letter Density.</p>
+
+    }@else { @for (character of letterDensity(); track character.character ){
+    <app-letter-density
+      [character]="character.character"
+      [percentage]="character.percentage"
+      [totalCount]="character.totalCount"
+    />
+
+    } }
   </div>
 </main>

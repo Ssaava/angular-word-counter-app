@@ -1,0 +1,18 @@
+<div class="flex gap-4 items-center">
+  <h3 class="dark:text-gray-200 font-bold text-lg sm:text-2xl capitalize">
+    {{ character }}
+  </h3>
+  <div class="flex-1">
+    <input
+      type="range"
+      [value]="percentage"
+      title="range"
+      class="size-full accent-purple-300 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-black [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-[50px] [&::-webkit-slider-thumb]:w-[50px] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-500"
+      max="100"
+    />
+  </div>
+
+  <p class="dark:text-gray-200 font-bold text-lg sm:text-2xl">
+    {{ totalCount }} <span>({{ percentage }}%)</span>
+  </p>
+</div>

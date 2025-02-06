@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
   @Input() backgroundColor: string = 'bg-purple-400';
   @Input() title: string = 'Counts';
-  @Input() totalCount: string = '';
+  @Input() totalCount: number = 0;
 }
