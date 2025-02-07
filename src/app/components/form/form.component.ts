@@ -14,6 +14,7 @@ export class FormComponent {
   excludeSpaces = this.controlCounterService.excludeSpaces;
   characterLimit = this.controlCounterService.characterLimit;
   textContent = this.controlCounterService.textContent;
+  totalReadingTime = this.controlCounterService.readingTime;
 
   toggleCharacterLimit() {
     this.controlCounterService.toggleCharacterLimit();

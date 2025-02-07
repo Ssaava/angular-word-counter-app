@@ -15,6 +15,7 @@ export class ControlCounterService {
   totalCharacters = signal(0);
   totalWords = signal(0);
   textContent = signal('');
+  readingTime = signal<string>('0');
   letterDensity = signal<
     {
       character: string;
@@ -34,11 +35,28 @@ export class ControlCounterService {
     this.characterLimit.update((prev) => !prev);
   }
 
+  calculateReadingTime() {
+    const estimatedReadingTime = (this.totalWords() / 200) * 60;
+    console.log(estimatedReadingTime);
+    if (estimatedReadingTime >= 59) {
+      const calculatedTime = Math.ceil(estimatedReadingTime / 60);
+      this.readingTime.set(
+        calculatedTime + ` minute${calculatedTime > 1 ? 's' : ''}`
+      );
+    } else {
+      const calculatedTime = Math.ceil(estimatedReadingTime);
+      this.readingTime.set(
+        calculatedTime + ` second${calculatedTime > 1 ? 's' : ''}`
+      );
+    }
+  }
+
   constructor() {
     const excludeSpacesValue =
       JSON.parse(localStorage.getItem('exclude-spaces') as string) || false;
     this.excludeSpaces.set(excludeSpacesValue);
     effect(() => {
+      this.calculateReadingTime();
       this.updateLetterDensity(this.textContent());
       if (this.textContent().length > 0) {
         this.updateTotalCharacters();
