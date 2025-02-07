@@ -23,7 +23,7 @@ export class ToggleThemeService {
     this.isDarkTheme.set(this.systemTheme.matches);
   }
   private initializeTheme() {
-    const currentTheme = localStorage.getItem('theme');
+    const currentTheme = localStorage.getItem('counter-theme');
     switch (currentTheme) {
       case 'dark':
         this.isDarkTheme.set(true);
@@ -43,6 +43,9 @@ export class ToggleThemeService {
   }
 
   private saveThemeToLocalStorage() {
-    localStorage.setItem('theme', this.isDarkTheme() ? 'dark' : 'light');
+    localStorage.setItem(
+      'counter-theme',
+      this.isDarkTheme() ? 'dark' : 'light'
+    );
   }
 }
