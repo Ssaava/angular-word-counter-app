@@ -25,12 +25,19 @@ export class ControlCounterService {
 
   toggleExcludeSpaces() {
     this.excludeSpaces.update((prev) => !prev);
+    localStorage.setItem(
+      'exclude-spaces',
+      JSON.stringify(this.excludeSpaces())
+    );
   }
   toggleCharacterLimit() {
     this.characterLimit.update((prev) => !prev);
   }
 
   constructor() {
+    const excludeSpacesValue =
+      JSON.parse(localStorage.getItem('exclude-spaces') as string) || false;
+    this.excludeSpaces.set(excludeSpacesValue);
     effect(() => {
       this.updateLetterDensity(this.textContent());
       if (this.textContent().length > 0) {
