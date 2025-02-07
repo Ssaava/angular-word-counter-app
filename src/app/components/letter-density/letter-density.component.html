@@ -1,17 +1,20 @@
 <div class="flex gap-4 items-center">
   <h3
-    class="w-6 mr-auto dark:text-gray-200 font-bold sm:text-2xl text-purple-700 capitalize"
+    class="w-6 mr-auto dark:text-gray-200 font-bold text-sm sm:text-2xl text-purple-700 capitalize"
   >
     {{ character }}
   </h3>
 
-  <progress
-    class="w-full accent-purple-500 rounded-2xl [&::-webkit-progress-bar]:rounded-2xl [&::-moz-progress-bar]:rounded-2xl [&::-webkit-progress-value]:rounded-2xl [&::-moz-progress-value]:rounded-2xl [&::-webkit-progress-value]:bg-purple-500 [&::-moz-progress-bar]:bg-purple-500 bg-gray-500/45 [&::-webkit-progress-bar]:bg-gray-500/45"
-    [value]="percentage"
-    max="100"
-  ></progress>
+  <div class="flex-1 min-w-0">
+    <progress
+      class="w-full h-3 sm:h-auto accent-purple-500 rounded-2xl [&::-webkit-progress-bar]:rounded-2xl [&::-moz-progress-bar]:rounded-2xl [&::-webkit-progress-value]:rounded-2xl [&::-moz-progress-value]:rounded-2xl [&::-webkit-progress-value]:bg-purple-500 [&::-moz-progress-bar]:bg-purple-500 bg-gray-500/45 [&::-webkit-progress-bar]:bg-gray-500/45"
+      [value]="percentage"
+      max="100"
+    ></progress>
+  </div>
+
   <p
-    class="flex gap-2 dark:text-gray-200 font-bold sm:text-2xl text-purple-700"
+    class="w-24 flex gap-2 dark:text-gray-200 font-bold text-sm sm:text-2xl text-purple-700"
   >
     {{ totalCount }} <span>({{ percentage }}%)</span>
   </p>
