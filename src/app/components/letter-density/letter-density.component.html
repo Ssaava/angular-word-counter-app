@@ -4,34 +4,14 @@
   >
     {{ character }}
   </h3>
-  <!-- <div class="flex-1">
-    <input
-      type="range"
-      [value]="percentage"
-      title="range"
-      class="size-full accent-purple-300 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-black [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-[50px] [&::-webkit-slider-thumb]:w-[50px] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-500"
-      max="100"
-    />
-  </div> -->
-
-  <!-- <div class="flex-1 w-full h-2" [style]="percentage | slider"></div> -->
-
-  <!-- <input
-    title="slider"
-    type="range"
-    min="0"
-    max="100"
-    value="50"
-    class="flex-1 w-full h-4 accent-amber-300 dark:accent-amber-500 bg-gray-200 rounded-lg dark:bg-gray-700 cursor-default [&::-webkit-slider-thumb]:w-0 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-red-400 [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:bg-black/0 [&::-moz-range-thumb]:active:bg-black/0"
-  /> -->
 
   <progress
     class="w-full rounded-2xl [&::-webkit-progress-bar]:rounded-2xl [&::-moz-progress-bar]:rounded-2xl [&::-webkit-progress-value]:rounded-2xl [&::-moz-progress-value]:rounded-2xl [&::-webkit-progress-value]:bg-purple-500 [&::-moz-progress-bar]:bg-purple-500 bg-gray-500/45 [&::-webkit-progress-bar]:bg-gray-500/45"
-    value="50"
+    [value]="percentage"
     max="100"
   ></progress>
   <p
-    class="ml-auto w-fit dark:text-gray-200 font-bold sm:text-2xl text-purple-700"
+    class="flex gap-2 dark:text-gray-200 font-bold sm:text-2xl text-purple-700"
   >
     {{ totalCount }} <span>({{ percentage }}%)</span>
   </p>
