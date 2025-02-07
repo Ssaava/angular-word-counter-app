@@ -66,7 +66,7 @@ export class ControlCounterService {
   updateLetterDensity(word: string) {
     letters = {};
     characters = [];
-    for (const character of word.trim()) {
+    for (const character of word.toLocaleLowerCase().trim()) {
       if (character == ' ') {
         continue;
       }
